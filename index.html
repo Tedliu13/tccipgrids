@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCCIP各縣市0.01網格座標下載</title>
+    <title>台灣縣市資料下載</title>
     <style>
         #svg-container {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100vw;
-            height: 80vh;
+            height: 90vh;
             overflow: hidden;
         }
         object {
@@ -27,6 +27,9 @@
             border-radius: 5px;
             font-size: 14px;
             display: none;
+            transform: translate(-50%, -120%);
+            white-space: nowrap;
+            pointer-events: none;
         }
     </style>
     <script>
@@ -63,7 +66,7 @@
     </script>
 </head>
 <body>
-    <h1 style="text-align: center;">點擊地圖下載縣市0.01網格CSV檔案</h1>
+    <h1 style="text-align: center;">點擊台灣地圖下載縣市 CSV 檔案</h1>
     <div id="svg-container">
         <object type="image/svg+xml" data="tw.svg" id="taiwan-map"></object>
     </div>
@@ -80,13 +83,13 @@
                         const countyId = event.target.id;
                         tooltip.innerText = `${countyId}_0.01deg.csv`;
                         tooltip.style.display = "block";
-                        tooltip.style.left = event.pageX + 10 + "px";
-                        tooltip.style.top = event.pageY + 10 + "px";
+                        tooltip.style.left = (1.8*event.pageX) + "px";
+                        tooltip.style.top = (event.pageY) + "px"; // 讓 tooltip 更靠上方
                         event.target.style.fill = '#ADD8E6'; // 使用 CSS 樣式變更顏色
                     });
                     path.addEventListener('mousemove', function(event) {
-                        tooltip.style.left = event.pageX + 10 + "px";
-                        tooltip.style.top = event.pageY + 10 + "px";
+                        tooltip.style.left = (1.8*event.pageX) + "px";
+                        tooltip.style.top = (event.pageY) + "px";
                     });
                     path.addEventListener('mouseout', function(event) {
                         event.target.style.fill = ''; // 恢復原色
