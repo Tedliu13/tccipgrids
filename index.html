@@ -14,7 +14,7 @@
             overflow: hidden;
         }
         object {
-            width: auto;
+            width: 100%;
             height: 100%;
             max-width: 100vw;
             max-height: 100vh;
@@ -27,9 +27,9 @@
             border-radius: 5px;
             font-size: 14px;
             display: none;
-            transform: translate(-50%, -120%);
             white-space: nowrap;
             pointer-events: none;
+            transform: translate(-100%, -100%);
         }
     </style>
     <script>
@@ -83,13 +83,13 @@
                         const countyId = event.target.id;
                         tooltip.innerText = `${countyId}_0.01deg.csv`;
                         tooltip.style.display = "block";
-                        tooltip.style.left = (1.5*event.pageX) + "px";
-                        tooltip.style.top = (event.pageY) + "px"; // 讓 tooltip 更靠上方
+                        tooltip.style.left = (event.pageX - 2) + "px";
+                        tooltip.style.top = (event.pageY - 2) + "px";
                         event.target.style.fill = '#ADD8E6'; // 使用 CSS 樣式變更顏色
                     });
                     path.addEventListener('mousemove', function(event) {
-                        tooltip.style.left = (1.5*event.pageX) + "px";
-                        tooltip.style.top = (event.pageY) + "px";
+                        tooltip.style.left = (event.pageX - 2) + "px";
+                        tooltip.style.top = (event.pageY - 2) + "px";
                     });
                     path.addEventListener('mouseout', function(event) {
                         event.target.style.fill = ''; // 恢復原色
