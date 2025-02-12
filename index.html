@@ -83,12 +83,12 @@
                         const countyId = event.target.id;
                         tooltip.innerText = `${countyId}_0.01deg.csv`;
                         tooltip.style.display = "block";
-                        tooltip.style.left = (event.pageX +20) + "px";
+                        tooltip.style.left = (event.pageX +50) + "px";
                         tooltip.style.top = (event.pageY) + "px";
                         event.target.style.fill = '#ADD8E6'; // 使用 CSS 樣式變更顏色
                     });
                     path.addEventListener('mousemove', function(event) {
-                        tooltip.style.left = (event.pageX +20) + "px";
+                        tooltip.style.left = (event.pageX +50) + "px";
                         tooltip.style.top = (event.pageY) + "px";
                     });
                     path.addEventListener('mouseout', function(event) {
