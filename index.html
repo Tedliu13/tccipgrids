@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCCIP各縣市1km網格下載</title>
     <style>
+        body {font-family: Verdana, Arial, Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;}
         #svg-container {
             display: flex;
             justify-content: center;
@@ -66,9 +67,9 @@
     </script>
 </head>
 <body>
-    <h1 style="text-align: center;">點擊地圖下載各縣市1km網格CSV檔案</h1>
-    <h2 style="text-align: center;">檔案下載後請複製到「TCCIP AR6 1km 統計降尺度資料 雲端下載程式」目錄，更名為grids.csv即可使用</h2>
-    <h2 style="text-align: center;"><a href="twtownsgrids.html">鄉鎮區下載請點此</a></h2>
+    <h2 style="text-align: center;">點擊地圖下載各縣市1km網格CSV檔案</h2>
+    <h3 style="text-align: center;">檔案下載後請複製到「TCCIP AR6 1km 統計降尺度資料 雲端下載程式」目錄，更名為grids.csv即可使用</h3>
+    <h3 style="text-align: center;"><a href="twtownsgrids.html">鄉鎮區下載請點此</a></h3>
     <div id="svg-container">
         <object type="image/svg+xml" data="tw.svg" id="taiwan-map"></object>
     </div>
@@ -85,13 +86,13 @@
                         const countyId = event.target.id;
                         tooltip.innerText = `${countyId}_0.01deg.csv`;
                         tooltip.style.display = "block";
-                        tooltip.style.left = (event.pageX +50) + "px";
-                        tooltip.style.top = (event.pageY) + "px";
+                        tooltip.style.left = (event.pageX - 2) + "px";
+                        tooltip.style.top = (event.pageY - 2) + "px";
                         event.target.style.fill = '#ADD8E6'; // 使用 CSS 樣式變更顏色
                     });
                     path.addEventListener('mousemove', function(event) {
-                        tooltip.style.left = (event.pageX +50) + "px";
-                        tooltip.style.top = (event.pageY) + "px";
+                        tooltip.style.left = (event.pageX - 2) + "px";
+                        tooltip.style.top = (event.pageY - 2) + "px";
                     });
                     path.addEventListener('mouseout', function(event) {
                         event.target.style.fill = ''; // 恢復原色
